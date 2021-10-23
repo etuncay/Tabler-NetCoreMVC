@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@ViewData["Title"] </title>
+    <!-- CSS files -->
+    <link href="~/css/tabler.min.css" rel="stylesheet" />
+    <link href="~/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="~/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="~/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="~/css/demo.min.css" rel="stylesheet" />
+</head>
+<body class="antialiased">
+    <div class="wrapper">
+
+        @await Html.PartialAsync("_Header")
+        @await Html.PartialAsync("_Navbar")
+        <div class="page-wrapper">
+            <div class="container-xl">
+                <!-- Page title -->
+                <div class="page-header d-print-none">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="page-title">
+                                @ViewData["Title"]
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="container-xl">
+                    @RenderBody()
+                </div>
+            </div>
+            @await Html.PartialAsync("_Footer")
+        </div>
+    </div>
+    <!-- Libs JS -->
+    <!-- Tabler Core -->
+    <script src="~/js/tabler.min.js"></script>
+    <script src="~/libs/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
